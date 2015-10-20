@@ -71,8 +71,7 @@
             this.cmnThreads,
             this.cmnModules,
             this.toolStripSeparator1,
-            this.cmnRun,
-            this.toolStripSeparator2});
+            this.cmnRun});
             this.cmProcesses.Name = "contextMenuStrip1";
             this.cmProcesses.Size = new System.Drawing.Size(153, 148);
             // 
