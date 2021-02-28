@@ -55,16 +55,20 @@
             this.lvProcesses.ContextMenuStrip = this.cmProcesses;
             this.lvProcesses.FullRowSelect = true;
             this.lvProcesses.GridLines = true;
-            this.lvProcesses.Location = new System.Drawing.Point(13, 12);
+            this.lvProcesses.HideSelection = false;
+            this.lvProcesses.Location = new System.Drawing.Point(20, 17);
+            this.lvProcesses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvProcesses.MultiSelect = false;
             this.lvProcesses.Name = "lvProcesses";
-            this.lvProcesses.Size = new System.Drawing.Size(639, 613);
+            this.lvProcesses.Size = new System.Drawing.Size(1222, 1121);
             this.lvProcesses.TabIndex = 0;
             this.lvProcesses.UseCompatibleStateImageBehavior = false;
             this.lvProcesses.View = System.Windows.Forms.View.Details;
+            this.lvProcesses.DoubleClick += new System.EventHandler(this.lvProcesses_DoubleClick);
             // 
             // cmProcesses
             // 
+            this.cmProcesses.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.cmProcesses.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmnPriority,
             this.cmnKill,
@@ -73,7 +77,7 @@
             this.toolStripSeparator1,
             this.cmnRun});
             this.cmProcesses.Name = "contextMenuStrip1";
-            this.cmProcesses.Size = new System.Drawing.Size(153, 148);
+            this.cmProcesses.Size = new System.Drawing.Size(168, 160);
             // 
             // cmnPriority
             // 
@@ -85,82 +89,82 @@
             this.cmnHigh,
             this.cmnReal});
             this.cmnPriority.Name = "cmnPriority";
-            this.cmnPriority.Size = new System.Drawing.Size(152, 22);
+            this.cmnPriority.Size = new System.Drawing.Size(167, 30);
             this.cmnPriority.Text = "Priority";
             this.cmnPriority.DropDownOpened += new System.EventHandler(this.cmnPriority_DropDownOpened);
             // 
             // cmnIdle
             // 
             this.cmnIdle.Name = "cmnIdle";
-            this.cmnIdle.Size = new System.Drawing.Size(152, 22);
+            this.cmnIdle.Size = new System.Drawing.Size(235, 34);
             this.cmnIdle.Text = "Idle";
             this.cmnIdle.Click += new System.EventHandler(this.cmnPriority_Click);
             // 
             // cmnBelowNormal
             // 
             this.cmnBelowNormal.Name = "cmnBelowNormal";
-            this.cmnBelowNormal.Size = new System.Drawing.Size(152, 22);
+            this.cmnBelowNormal.Size = new System.Drawing.Size(235, 34);
             this.cmnBelowNormal.Text = "Below Normal";
             this.cmnBelowNormal.Click += new System.EventHandler(this.cmnPriority_Click);
             // 
             // cmnNormal
             // 
             this.cmnNormal.Name = "cmnNormal";
-            this.cmnNormal.Size = new System.Drawing.Size(152, 22);
+            this.cmnNormal.Size = new System.Drawing.Size(235, 34);
             this.cmnNormal.Text = "Normal";
             this.cmnNormal.Click += new System.EventHandler(this.cmnPriority_Click);
             // 
             // cmnAboveNormal
             // 
             this.cmnAboveNormal.Name = "cmnAboveNormal";
-            this.cmnAboveNormal.Size = new System.Drawing.Size(152, 22);
+            this.cmnAboveNormal.Size = new System.Drawing.Size(235, 34);
             this.cmnAboveNormal.Text = "Above Normal";
             this.cmnAboveNormal.Click += new System.EventHandler(this.cmnPriority_Click);
             // 
             // cmnHigh
             // 
             this.cmnHigh.Name = "cmnHigh";
-            this.cmnHigh.Size = new System.Drawing.Size(152, 22);
+            this.cmnHigh.Size = new System.Drawing.Size(235, 34);
             this.cmnHigh.Text = "High";
             this.cmnHigh.Click += new System.EventHandler(this.cmnPriority_Click);
             // 
             // cmnReal
             // 
             this.cmnReal.Name = "cmnReal";
-            this.cmnReal.Size = new System.Drawing.Size(152, 22);
+            this.cmnReal.Size = new System.Drawing.Size(235, 34);
             this.cmnReal.Text = "RealTime";
             this.cmnReal.Click += new System.EventHandler(this.cmnPriority_Click);
             // 
             // cmnKill
             // 
             this.cmnKill.Name = "cmnKill";
-            this.cmnKill.Size = new System.Drawing.Size(152, 22);
+            this.cmnKill.Size = new System.Drawing.Size(167, 30);
             this.cmnKill.Text = "Kill";
             this.cmnKill.Click += new System.EventHandler(this.cmnKill_Click);
             // 
             // cmnThreads
             // 
             this.cmnThreads.Name = "cmnThreads";
-            this.cmnThreads.Size = new System.Drawing.Size(152, 22);
+            this.cmnThreads.Size = new System.Drawing.Size(167, 30);
             this.cmnThreads.Text = "Threads...";
             this.cmnThreads.Click += new System.EventHandler(this.details_Click);
             // 
             // cmnModules
             // 
             this.cmnModules.Name = "cmnModules";
-            this.cmnModules.Size = new System.Drawing.Size(152, 22);
+            this.cmnModules.Size = new System.Drawing.Size(167, 30);
             this.cmnModules.Text = "Modules...";
             this.cmnModules.Click += new System.EventHandler(this.details_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
             // 
             // cmnRun
             // 
             this.cmnRun.Name = "cmnRun";
-            this.cmnRun.Size = new System.Drawing.Size(152, 22);
+            this.cmnRun.Size = new System.Drawing.Size(167, 30);
             this.cmnRun.Text = "Run...";
             this.cmnRun.Click += new System.EventHandler(this.cmnRun_Click);
             // 
@@ -171,10 +175,11 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 637);
+            this.ClientSize = new System.Drawing.Size(1262, 1156);
             this.Controls.Add(this.lvProcesses);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Text = "Processes";
             this.cmProcesses.ResumeLayout(false);

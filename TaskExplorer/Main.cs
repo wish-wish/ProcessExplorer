@@ -368,5 +368,25 @@ namespace ProcessExplorer
         }
 
         #endregion
+
+        private void lvProcesses_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {                
+                if (this.lvProcesses.SelectedIndices.Count != 1) { return; }
+                ProcessInfo pi = this.lvProcesses.SelectedItems[0].Tag as ProcessInfo;
+                if (pi == null) { return; }
+                Process proc = pi.Process;
+                Details detailsForm = detailsForm = new Details(proc.Modules);                
+                if (detailsForm != null)
+                {
+                    detailsForm.Show();
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Не удалось получить информацию", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

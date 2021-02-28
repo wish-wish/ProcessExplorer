@@ -38,19 +38,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDetails.FullRowSelect = true;
             this.lvDetails.GridLines = true;
-            this.lvDetails.Location = new System.Drawing.Point(13, 13);
+            this.lvDetails.HideSelection = false;
+            this.lvDetails.Location = new System.Drawing.Point(20, 18);
+            this.lvDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvDetails.Name = "lvDetails";
-            this.lvDetails.Size = new System.Drawing.Size(715, 497);
+            this.lvDetails.Size = new System.Drawing.Size(1245, 1012);
             this.lvDetails.TabIndex = 0;
             this.lvDetails.UseCompatibleStateImageBehavior = false;
             this.lvDetails.View = System.Windows.Forms.View.Details;
             // 
             // Details
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 522);
+            this.ClientSize = new System.Drawing.Size(1285, 1048);
             this.Controls.Add(this.lvDetails);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Details";
             this.Text = "Details";
             this.ResumeLayout(false);
